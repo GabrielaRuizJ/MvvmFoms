@@ -30,6 +30,7 @@ namespace MvvmValidation
         }
 
         public Command Clicked{ get; }
+
         public string MensajeButton
         {
             get { return mesajebutton; }
