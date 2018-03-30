@@ -9,8 +9,8 @@
             <Label Text="{Binding LblContraseña}"/>
             <Entry Text="{Binding EnContraseña}" IsPassword="{Binding Password}}"/>
 
-            <Label Text="{Binding Mensaje}" IsEnabled="{Binding IsEnable}"/>
-            <Button/>
+            <Label Text="{Binding Mensaje}" IsVisible="{Binding IsVisible}"/>
+            <Button Text="{Binding MensajeButton}" IsEnabled="{Binding IsEnable}" Command="{Binding Clicked}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
