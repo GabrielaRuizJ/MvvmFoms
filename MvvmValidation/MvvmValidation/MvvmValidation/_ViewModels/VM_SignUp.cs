@@ -43,7 +43,7 @@ namespace MvvmValidation
 
         private void ShowPass(object obj)
         {
-            Password = (Password == true) ? Password = false:Password=true;
+            Password = !Password;
         }
         
         public Command Clicked{ get; }
