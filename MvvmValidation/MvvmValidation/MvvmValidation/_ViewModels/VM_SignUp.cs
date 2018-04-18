@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MvvmValidation
@@ -18,19 +19,35 @@ namespace MvvmValidation
         private bool isEnable;
         private bool visible;
         private string mesajebutton="Mostrar contraseña";
-
-        public  VM_SignUp()
+        private string singup = "Regístrarme";
+        public INavigation Navigation { get; set; }
+        public string SingUp
         {
+            get { return singup; }
+            set { singup = value; }
+        }
+
+
+        public  VM_SignUp(INavigation navigation)
+        {
+            Navigation = navigation;
             Clicked = new Command(ShowPass);
+            ClickedSing = new Command(async () => await GotoPage2());
+        }
+
+
+        public async Task GotoPage2()
+        {
+            await Navigation.PushAsync(new SiguientePag());
         }
 
         private void ShowPass(object obj)
         {
             Password = (Password == true) ? Password = false:Password=true;
         }
-
+        
         public Command Clicked{ get; }
-
+        public Command ClickedSing { get; }
         public string MensajeButton
         {
             get { return mesajebutton; }
@@ -116,6 +133,8 @@ namespace MvvmValidation
             get { return mensaje; }
             set { mensaje = value; }
         }
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
         void OnPropertyChanged([CallerMemberName] string name = "")

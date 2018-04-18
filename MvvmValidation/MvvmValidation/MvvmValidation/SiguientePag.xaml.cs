@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace MvvmValidation
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SignUp : ContentPage
+	public partial class SiguientePag : ContentPage
 	{
-		public SignUp ()
+		public SiguientePag ()
 		{
 			InitializeComponent ();
-            BindingContext = new VM_SignUp(Navigation);
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace MvvmValidation
 		{
 			InitializeComponent();
 
-			MainPage = new SignUp();
+			MainPage = new NavigationPage(new SignUp());
 		}
 
 		protected override void OnStart ()

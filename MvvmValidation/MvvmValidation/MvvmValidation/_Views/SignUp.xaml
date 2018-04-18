@@ -11,6 +11,7 @@
 
             <Label Text="{Binding Mensaje}" IsVisible="{Binding IsVisible}"/>
             <Button Text="{Binding MensajeButton}" IsEnabled="{Binding IsEnable}" Command="{Binding Clicked}"/>
+            <Button Text="{Binding SingUp}" IsEnabled="True" Command="{Binding ClickedSing}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
