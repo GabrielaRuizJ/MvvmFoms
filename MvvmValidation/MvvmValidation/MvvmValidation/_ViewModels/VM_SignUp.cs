@@ -32,13 +32,13 @@ namespace MvvmValidation
         {
             Navigation = navigation;
             Clicked = new Command(ShowPass);
-            ClickedSing = new Command(async () => await GotoPage2());
+            ClickedSing = new Command(async () => await Navegar());
         }
 
 
-        public async Task GotoPage2()
+        public async Task Navegar()
         {
-            await Navigation.PushAsync(new SiguientePag());
+            await Navigation.PushAsync(new SiguientePag(enUsuario));
         }
 
         private void ShowPass(object obj)

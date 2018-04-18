@@ -12,9 +12,12 @@ namespace MvvmValidation
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SiguientePag : ContentPage
 	{
-		public SiguientePag ()
+		public SiguientePag (string text)
 		{
-			InitializeComponent ();
+            string variable = text;
+
+            InitializeComponent ();
+            BindingContext = new VM_SiguientePag(variable);
 		}
 	}
 }
