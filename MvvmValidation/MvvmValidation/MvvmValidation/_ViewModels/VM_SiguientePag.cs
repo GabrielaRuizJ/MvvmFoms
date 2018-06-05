@@ -15,6 +15,11 @@ namespace MvvmValidation
             NombreParam = n;
         }
         public Command ClickMensaje { get; set; }
+
+        async Task Mensaje()
+        {
+            await Application.Current.MainPage.DisplayAlert("The XamSharp blog", "Message", "OK");
+        }
         private string nombre ;
 
         public string NombreUsuario
@@ -28,9 +33,6 @@ namespace MvvmValidation
             get { return texto ; }
             set { texto =value; }
         }
-        async Task Mensaje()
-        {
-            await Application.Current.MainPage.DisplayAlert("ds", "ds", "ds");
-        }
+        
     }
 }
